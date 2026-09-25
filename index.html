@@ -32,6 +32,21 @@ html, body, #root, #root > div {
   box-shadow: none !important;
   border: none !important;
   background-color: #000000 !important; /* Cor de fundo adaptada ao tema escuro */
+}/* Anula o container de mockup do Tailwind (linha 104) */
+div.min-h-screen.w-full.flex.items-center.justify-center {
+  padding: 0 !important;
+  display: block !important;
+  background-color: transparent !important;
+}
+
+/* Remove cantos arredondados, margens e sombras do cartão interno do app */
+div.min-h-screen.w-full.flex.items-center.justify-center > div {
+  max-width: 100% !important;
+  width: 100% !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  margin: 0 !important;
 }
 
 /* Regras anteriores mantidas */
