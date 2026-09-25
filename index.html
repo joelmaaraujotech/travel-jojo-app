@@ -7,10 +7,10 @@
     
     <title>Travel JOJO</title>
 
-    <!-- Pinta a barra de status do topo do iPhone com a cor bege do app -->
-    <meta name="theme-color" content="#F2EBDC">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Suporte automático à barra de status nos temas Light (#FFFEF9) e Dark (#0E0E0E) -->
+<meta name="theme-color" content="#FFFEF9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E0E0E" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Travel JOJO">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
@@ -23,19 +23,35 @@
 
 <style>
 /* Força o aplicativo a ocupar 100% da tela do ecrã no iPhone, removendo o mockup */
-html, body, #root, #root > div {
+/* Cor de fundo dinâmica nativa para o sistema iOS/Android */
+html {
+  background-color: #FFFEF9;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: #0E0E0E;
+  }
+}
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  overflow-x: hidden;
+}
+
+#root, #root > div {
   width: 100% !important;
   max-width: 100% !important;
-  min-height: 100vh !important;
   min-height: 100dvh !important;
-  height: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
   border: none !important;
-  background-color: #F2EBDC !important; /* Cor de fundo adaptada ao tema escuro */
-}/* Anula o container de mockup do Tailwind (linha 104) */
+}
 div.min-h-screen.w-full.flex.items-center.justify-center {
   padding: 0 !important;
   display: block !important;
@@ -44,6 +60,14 @@ div.min-h-screen.w-full.flex.items-center.justify-center {
 
 /* Remove cantos arredondados, margens e sombras do cartão interno do app */
 div.min-h-screen.w-full.flex.items-center.justify-center > div {
+  /* Força a imagem da tela inicial (pirâmides) a cobrir 100% da tela sem cantos arredondados */
+img, .hero-image, [class*="pyramid"], [class*="hero"] {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 0 !important;
+  max-width: none !important;
+}
   max-width: 100% !important;
   width: 100% !important;
   border-radius: 0 !important;
