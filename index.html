@@ -46,9 +46,12 @@ html, body {
   width: 100% !important;
   max-width: 100% !important;
   height: 100% !important;
-  overflow-x: hidden !important; /* Evita que a tela role para os lados */
-  overscroll-behavior: none !important; /* Mata o efeito mola no iOS e Android */
-  touch-action: pan-y; /* Permite apenas deslizar na vertical */
+  position: fixed; /* Trava a estrutura base para o iPhone não "desconectar" o topo */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden !important;
   transition: background-color 0.3s ease;
 }
 
@@ -64,17 +67,19 @@ html, body {
 /* Previne o efeito mola no container com rolagem */
 .screen-scrollable {
   height: 100dvh;
+  height: 100vh;
+  width: 100%;
   overflow-y: auto;
-  overscroll-behavior-y: contain !important;
-  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch; /* Garante rolagem nativa e fluida no iOS */
 }
 
 /* Para a tela Star (sem rolagem e sem efeito mola) */
 .screen-fixed {
   height: 100dvh;
+  height: 100vh; /* Fallback de compatibilidade */
   width: 100%;
   overflow: hidden !important;
-  touch-action: none;
 }
 
 /* Imagem da tela Star sangrando até as bordas da tela */
