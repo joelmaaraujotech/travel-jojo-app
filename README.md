@@ -32,8 +32,8 @@ Layout único limitado a 480 px também no computador. Fundos em #FFF5DF, amostr
 
 ## Aparência e ações
 
-Botão flutuante de 56 px abre painel com Padrão, Escuro, Sol e Seguir o sistema. Preferência local jojo_appearance, independente dos dados da viagem e disponível offline. theme.js aplica o tema antes da folha de estilos. Tema do sistema acompanha mudanças de prefers-color-scheme; escolha explícita tem prioridade.
+Tema claro/escuro segue automaticamente o sistema do celular. Botão flutuante Modo Sol / Zonmodus alterna apenas o alto contraste, com aria-pressed e estado visível. Desativar retorna ao tema atual do sistema. Preferência local jojo_appearance mantém apenas sun ou system; antigas escolhas manuais standard/dark passam a seguir o sistema. Escolha Sol anterior é preservada. Disponível offline e aplicado antes da folha de estilos.
 
-Cores semânticas centralizadas em style.css: ações principais preenchidas, secundárias com bordas, exclusão em vermelho, pendências com rótulo e âmbar, seleção com destaque e confirmação. Campos usam foco visível e erros associados por aria-describedby. Tema Sol usa fundo branco, texto preto, bordas fortes e áreas de toque de pelo menos 48 px para botões. FAB acima da navegação, com espaço adicional no fim do conteúdo.
+Todos os botões, seletores de idioma, abas de navegação e campos usam raio constante de 10 px. Ações principais preenchidas e secundárias com contorno; exclusão em vermelho. Tema escuro conserva paleta clara nos botões para contraste. FAB acima da navegação, com espaço no fim do conteúdo.
 
-Validação: três temas nas cinco telas, PT/NL, persistência offline, alternância pelo sistema, erro de datas e correção. Contraste de texto padrão e escuro acima de 4.5:1 nas combinações principais; contorno dos campos padrão 3.67:1 e texto preto/branco no tema Sol 21:1. Leitura sob sol real em aparelho físico ainda precisa ser validada.
+Cores semânticas em style.css; foco visível e erros associados por aria-describedby. Contraste das combinações principais de texto acima de 4.5:1, contorno dos campos padrão 3.67:1 e preto/branco no modo Sol 21:1. Leitura sob sol real precisa de validação em aparelho físico.
