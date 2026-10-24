@@ -93,3 +93,14 @@ nav a{flex-direction:column;gap:4px;padding:8px 2px;min-height:64px}nav a .nav-l
 #toast{max-width:min(420px,calc(100% - 24px));width:max-content;font-size:14px}#toast button{margin-left:12px;background:var(--surface);color:var(--text);border-color:var(--text);min-height:44px;font-weight:700}
 #conversion-result{display:block;font-size:20px;font-weight:700;margin:16px 0;overflow-wrap:anywhere}
 body.editor-open>.appearance-fab{visibility:hidden}
+
+/* Safari date controls must not impose their intrinsic minimum width on forms. */
+#editor,.modal-content,.modal-content .grid,.modal-content .grid>div{min-width:0;min-inline-size:0;max-width:100%;box-sizing:border-box}
+.modal-content{width:100%;overflow-x:hidden;flex:1 1 auto}
+input:not([type=checkbox]):not([type=radio]),select,textarea{display:block;box-sizing:border-box;width:100%;min-width:0;max-width:100%;min-inline-size:0;max-inline-size:100%}
+input:not([type=checkbox]):not([type=radio]),select{height:48px;min-height:48px;line-height:normal}
+input[type=date],input[type=datetime-local],input[type=time]{-webkit-appearance:none;appearance:none;inline-size:100%;min-inline-size:0;max-inline-size:100%;text-align:left;overflow:hidden}
+input[type=date]::-webkit-date-and-time-value,input[type=datetime-local]::-webkit-date-and-time-value,input[type=time]::-webkit-date-and-time-value{min-width:0;min-height:1.2em;text-align:left;margin:0}
+input::-webkit-datetime-edit{min-width:0;padding:0}
+input::-webkit-datetime-edit-fields-wrapper{padding:0}
+select{text-overflow:ellipsis}

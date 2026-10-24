@@ -59,3 +59,7 @@ Exclusões de destino, gasto e plano oferecem desfazer por 12 segundos. Formulá
 Navegação com ícones e rótulos curtos, conversão separada do cadastro de cotação, mensagens contextuais após salvar, revisão de datas no backup antes da substituição, e limites explícitos do offline e da ausência de sincronização remota. PT-BR/NL mantidos em todos os novos fluxos.
 
 Validação em Chromium móvel: destino futuro no Hoje, formulário mínimo, correção de data, hospedagem/reserva, proteção de alterações, confirmações, gasto/exclusão/desfazer, cotação e conversão, metadados do backup, reload offline, holandês e larguras 320/390/430. Também simulado erro de armazenamento com repetição de salvamento e conflito de datas com aceitar/cancelar. Testes físicos de teclado/sol continuam pendentes.
+
+## Correção de campos no iOS
+
+Controles date/datetime-local/time recebem min-inline-size:0, largura limitada ao contêiner e appearance:none, neutralizando o dimensionamento intrínseco do Safari. Inputs e selects de uma linha usam 48 px; textarea mantém área maior. Contêiner de rolagem preservado, com min-width:0 e overflow horizontal bloqueado. Verificados no Chromium largura/altura dos campos, preenchimento de datas, registro de gasto e rolagem em viewport reduzido, PT/NL em 320/393/430 px. Safari/iPhone físico não disponível para validação nesta sessão.
