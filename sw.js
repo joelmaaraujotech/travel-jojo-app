@@ -1,11 +1,6 @@
-self.addEventListener('install', (event) => {
-  self.skipWaiting();
-});
-
-self.addEventListener('activate', (event) => {
-  event.waitUntil(clients.claim());
-});
-
-self.addEventListener('fetch', (event) => {
-  event.respondWith(fetch(event.request));
-});
+const CACHE='travel-jojo-shell-v3',ASSETS=['/','/index.html','/app.js','/style.css','/manifest.json','/icon-192.png','/icon-512.png'];
+async function prepare(){const cache=await caches.open(CACHE);await cache.addAll(ASSETS);return true}
+self.addEventListener('install',e=>{e.waitUntil(prepare().then(()=>self.skipWaiting()))});
+self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('travel-jojo-shell-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
+self.addEventListener('message',e=>{e.waitUntil((async()=>{try{if(e.data==='PREPARE')await prepare();const c=await caches.open(CACHE),all=await Promise.all(ASSETS.map(a=>c.match(a)));e.ports[0]?.postMessage({ok:all.every(Boolean)})}catch{e.ports[0]?.postMessage({ok:false})}})())});
+self.addEventListener('fetch',e=>{const u=new URL(e.request.url);if(e.request.method!=='GET'||u.origin!==self.location.origin)return;if(e.request.mode==='navigate'){e.respondWith(fetch(e.request).catch(()=>caches.match('/index.html')));return}if(ASSETS.includes(u.pathname))e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request)))});
