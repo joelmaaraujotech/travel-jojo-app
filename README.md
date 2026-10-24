@@ -37,3 +37,7 @@ Tema claro/escuro segue automaticamente o sistema do celular. Botão flutuante M
 Todos os botões, seletores de idioma, abas de navegação e campos usam raio constante de 10 px. Ações principais preenchidas e secundárias com contorno; exclusão em vermelho. Tema escuro conserva paleta clara nos botões para contraste. FAB acima da navegação, com espaço no fim do conteúdo.
 
 Cores semânticas em style.css; foco visível e erros associados por aria-describedby. Contraste das combinações principais de texto acima de 4.5:1, contorno dos campos padrão 3.67:1 e preto/branco no modo Sol 21:1. Leitura sob sol real precisa de validação em aparelho físico.
+
+## Contornos de referência
+
+Cartões, destaque inicial, diálogos, avisos e seletor de idiomas compartilham moldura fina com raio de 24 px. Botões internos mantêm raio de 10 px e destaque de ação. Navegação recebe o mesmo contorno arredondado no topo. Modo Sol preserva bordas de 2 px.

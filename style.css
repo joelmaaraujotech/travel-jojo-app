@@ -11,3 +11,15 @@
 /* Unified geometry for all interactive controls. */
 :root{--control-radius:10px}button,.button,input:not([type=checkbox]):not([type=radio]),select,textarea,nav a,.language-switch,.language-switch button,.appearance-fab,summary{border-radius:var(--control-radius)}
 .appearance-fab{width:auto;min-width:56px;max-width:calc(100% - 36px);height:56px;padding:0 14px;gap:8px;font-weight:600}.appearance-fab span{font-size:13px}.appearance-fab[aria-pressed=true]{background:var(--accent);color:var(--on-accent);box-shadow:inset 0 0 0 2px var(--on-accent)}.appearance-fab[aria-pressed=true] span::before{content:'✓ ';font-weight:700}.appearance-fab svg{flex-shrink:0}
+
+/* Reference frame: a fine outline with softly rounded corners on every panel. */
+:root{--panel-radius:24px;--frame-width:1px}
+.hero,.card,dialog,.notice,.language-switch{border:var(--frame-width) solid var(--line);border-radius:var(--panel-radius)}
+.hero,.card,dialog{box-shadow:none}
+.language-switch{padding:5px;gap:5px;background:var(--surface)}
+.language-switch button{border:1px solid transparent;border-radius:var(--control-radius)}
+.language-switch button[aria-pressed=false]{color:var(--text)}
+.language-switch button[aria-pressed=true]{border-color:var(--accent)}
+nav{border:var(--frame-width) solid var(--line);border-bottom:0;border-radius:var(--panel-radius) var(--panel-radius) 0 0}
+button:not(.primary):not(.quiet):not([aria-pressed=true]),.button:not(.primary),input:not([aria-invalid=true]),select:not([aria-invalid=true]),textarea:not([aria-invalid=true]){border-color:var(--line)}
+[data-theme=sun]{--frame-width:2px}
