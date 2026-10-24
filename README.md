@@ -45,3 +45,7 @@ Cartões, destaque inicial, diálogos, avisos e seletor de idiomas compartilham 
 ## Formulários móveis
 
 Editor em janela com título e ações fixos e um único contêiner interno rolável. Fundo bloqueado enquanto aberto, restaurando a posição no fechamento. Altura e posição acompanham VisualViewport, inclusive em redimensionamento pelo teclado. Testar teclado e barras do navegador em iOS/Android físicos continua recomendado. Idioma ativo usa as cores semânticas verdes; botão Sol circular de 56 px, apenas ícone visual, com nome acessível preservado.
+
+## Design system atual
+
+A referência mais recente substitui a antiga identidade creme/verde: Laranja Aventura #FF6B1A, Preto Sofisticação #1D1D1D e Off White #FFFEF9. Monograma TJ vetorial em logo.svg; ícones de instalação gerados a partir dele. Open Sans mantida, ícones de navegação com traço fino, ações em laranja com texto preto, cartões neutros e destaque inicial preto. Tema automático permanece; Sol mantém preto/branco. Dados e estrutura funcional preservados. O texto pequeno em laranja usa tom mais escuro no tema claro para legibilidade.
