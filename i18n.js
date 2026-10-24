@@ -2,6 +2,7 @@
 let uiLanguage='pt-BR';try{if(localStorage.getItem('jojo_language')==='nl')uiLanguage='nl'}catch{}
 const locale=()=>uiLanguage==='nl'?'nl-NL':'pt-BR';
 const NL={
+'Mais opções':'Meer opties',
 'MARROCOS & EGITO · 6 SEMANAS':'MAROKKO & EGYPTE · 6 WEKEN','✚ Ajuda':'✚ Hulp','Abrir cartão de ajuda':'Hulpkaart openen','Idioma do aplicativo':'Taal van de app',
 'Hoje':'Vandaag','Roteiro':'Reisroute','Dinheiro':'Geld','Frases':'Zinnen','Mais':'Meer','Navegação principal':'Hoofdnavigatie',
 'O que nos espera hoje?':'Wat staat ons vandaag te wachten?','Uma viagem a dois. Um lugar para o que importa.':'Samen op reis. Alles wat ertoe doet op één plek.','SUA PARADA DE HOJE':'JULLIE BESTEMMING VANDAAG','MARROCOS & EGITO':'MAROKKO & EGYPTE','Seis semanas.<br>Mil histórias.':'Zes weken.<br>Duizend verhalen.','Hospedagem ainda não adicionada':'Nog geen accommodatie toegevoegd','Organizem o próximo passo, guardem as reservas e aproveitem o caminho.':'Plan de volgende stap, bewaar reserveringen en geniet van de reis.',

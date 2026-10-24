@@ -29,3 +29,11 @@ Interface em português brasileiro e holandês. Seletor PT-BR / NL no cabeçalho
 ## Visual para celular
 
 Layout único limitado a 480 px também no computador. Fundos em #FFF5DF, amostrado do fundo do ícone original. Open Sans 400/600/700 incluída localmente em fonts/ e no cache offline; licença em fonts/OFL.txt. Verificados todos os caminhos nos dois idiomas em 320, 390, 430 e 1280 px, sem rolagem horizontal, além de carregamento da fonte sem internet.
+
+## Aparência e ações
+
+Botão flutuante de 56 px abre painel com Padrão, Escuro, Sol e Seguir o sistema. Preferência local jojo_appearance, independente dos dados da viagem e disponível offline. theme.js aplica o tema antes da folha de estilos. Tema do sistema acompanha mudanças de prefers-color-scheme; escolha explícita tem prioridade.
+
+Cores semânticas centralizadas em style.css: ações principais preenchidas, secundárias com bordas, exclusão em vermelho, pendências com rótulo e âmbar, seleção com destaque e confirmação. Campos usam foco visível e erros associados por aria-describedby. Tema Sol usa fundo branco, texto preto, bordas fortes e áreas de toque de pelo menos 48 px para botões. FAB acima da navegação, com espaço adicional no fim do conteúdo.
+
+Validação: três temas nas cinco telas, PT/NL, persistência offline, alternância pelo sistema, erro de datas e correção. Contraste de texto padrão e escuro acima de 4.5:1 nas combinações principais; contorno dos campos padrão 3.67:1 e texto preto/branco no tema Sol 21:1. Leitura sob sol real em aparelho físico ainda precisa ser validada.
