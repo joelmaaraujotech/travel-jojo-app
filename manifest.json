@@ -3,19 +3,23 @@
   "name": "Travel JOJO",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "/icon-192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any"
     },
     {
-      "src": "icon-512.png",
+      "src": "/icon-512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any"
     }
   ],
-  "start_url": "./",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "start_url": "/",
+  "background_color": "#FFFEF9",
+  "theme_color": "#FFFEF9",
   "display": "standalone",
-  "orientation": "portrait"
+  "orientation": "portrait",
+  "id": "/",
+  "scope": "/"
 }
