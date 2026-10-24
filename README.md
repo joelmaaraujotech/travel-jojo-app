@@ -49,3 +49,13 @@ Editor em janela com título e ações fixos e um único contêiner interno rol�
 ## Design system atual
 
 A referência mais recente substitui a antiga identidade creme/verde: Laranja Aventura #FF6B1A, Preto Sofisticação #1D1D1D e Off White #FFFEF9. Monograma TJ vetorial em logo.svg; ícones de instalação gerados a partir dele. Open Sans mantida, ícones de navegação com traço fino, ações em laranja com texto preto, cartões neutros e destaque inicial preto. Tema automático permanece; Sol mantém preto/branco. Dados e estrutura funcional preservados. O texto pequeno em laranja usa tom mais escuro no tema claro para legibilidade.
+
+## Revisão UX e conteúdo
+
+Hoje destaca o destino atual ou o próximo destino futuro. Cadastro inicial limitado a cidade, país e datas; hospedagem, transporte, reservas e notas têm fluxos separados. Confirmação dos viajantes independente de reservas da hospedagem/transporte; dados legados de status Reservado aparecem como hospedagem reservada. Nenhum dado existente é apagado; continua o esquema version 3.
+
+Exclusões de destino, gasto e plano oferecem desfazer por 12 segundos. Formulários alterados pedem confirmação antes de fechar (inclusive Escape), e a página solicita aviso nativo ao sair. Salvamento sem sucesso mantém o formulário e permite nova tentativa sem registros duplicados. Datas invertidas geram erro junto ao campo; destinos sobrepostos pedem confirmação.
+
+Navegação com ícones e rótulos curtos, conversão separada do cadastro de cotação, mensagens contextuais após salvar, revisão de datas no backup antes da substituição, e limites explícitos do offline e da ausência de sincronização remota. PT-BR/NL mantidos em todos os novos fluxos.
+
+Validação em Chromium móvel: destino futuro no Hoje, formulário mínimo, correção de data, hospedagem/reserva, proteção de alterações, confirmações, gasto/exclusão/desfazer, cotação e conversão, metadados do backup, reload offline, holandês e larguras 320/390/430. Também simulado erro de armazenamento com repetição de salvamento e conflito de datas com aceitar/cancelar. Testes físicos de teclado/sol continuam pendentes.

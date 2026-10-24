@@ -2,6 +2,7 @@
 let uiLanguage='pt-BR';try{if(localStorage.getItem('jojo_language')==='nl')uiLanguage='nl'}catch{}
 const locale=()=>uiLanguage==='nl'?'nl-NL':'pt-BR';
 const NL={
+'Gastos':'Uitgaven','Pendente':'Nog te regelen','Adicionar destino':'Bestemming toevoegen','Editar destino':'Bestemming bewerken',
 'Mais opções':'Meer opties',
 'MARROCOS & EGITO · 6 SEMANAS':'MAROKKO & EGYPTE · 6 WEKEN','✚ Ajuda':'✚ Hulp','Abrir cartão de ajuda':'Hulpkaart openen','Idioma do aplicativo':'Taal van de app',
 'Hoje':'Vandaag','Roteiro':'Reisroute','Dinheiro':'Geld','Frases':'Zinnen','Mais':'Meer','Navegação principal':'Hoofdnavigatie',

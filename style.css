@@ -86,3 +86,10 @@ nav{border-radius:20px 20px 0 0}nav a{color:var(--muted)}nav a[aria-current=page
 .tag .ui-icon{width:14px;height:14px;margin-right:4px}.tag[data-status]{display:inline-flex;align-items:center;gap:3px}
 summary{list-style:none}summary::-webkit-details-marker{display:none}summary>.ui-icon{margin-right:8px}details[open]>summary>.ui-icon{transform:rotate(180deg)}
 .check button{flex-shrink:0;min-width:48px}.modal-header button .ui-icon{width:22px;height:22px}
+
+/* Clear daily information, progressive destination forms, and recoverable actions. */
+nav a{flex-direction:column;gap:4px;padding:8px 2px;min-height:64px}nav a .nav-label{display:block;font-size:10px;line-height:1.2;margin:0;font-weight:600}nav a svg{width:25px;height:25px}nav a[aria-current=page]::after{bottom:1px;width:3px;height:3px}
+.booking-status{display:grid;gap:4px;padding:12px 0;border-bottom:1px solid var(--line);margin-bottom:12px}.booking-status p{font-size:13px;margin:0}
+#toast{max-width:min(420px,calc(100% - 24px));width:max-content;font-size:14px}#toast button{margin-left:12px;background:var(--surface);color:var(--text);border-color:var(--text);min-height:44px;font-weight:700}
+#conversion-result{display:block;font-size:20px;font-weight:700;margin:16px 0;overflow-wrap:anywhere}
+body.editor-open>.appearance-fab{visibility:hidden}

@@ -13,11 +13,11 @@ function decorateIcons(root=document){
  root.querySelectorAll('button:not([data-language]):not(#appearance-fab),a.button,summary,.tag[data-status]').forEach(el=>{
   if(el.querySelector('.ui-icon'))return;
   const action=el.dataset.action;
-  let name=({expense:'plus',plan:'plus',address:'pin','remove-plan':'close','delete-stop':'trash','delete-expense':'trash',offline:'download',export:'download',import:'upload',speak:'sound','show-phrase':'expand',settings:'settings',rate:'exchange'})[action];
+  let name=({lodging:'pin',transport:'map',reservation:'download',notes:'edit',convert:'exchange',expense:'plus',plan:'plus',address:'pin','remove-plan':'close','delete-stop':'trash','delete-expense':'trash',offline:'download',export:'download',import:'upload',speak:'sound','show-phrase':'expand',settings:'settings',rate:'exchange'})[action];
   if(action==='stop')name=el.dataset.id?'edit':'plus';
   if(action==='vote')name=el.getAttribute('aria-pressed')==='true'?'check':'circle';
   if(el.hasAttribute('data-close'))name='close';
-  if(el.type==='submit')name='check';
+  if(el.matches('button[type=submit]'))name='check';
   if(el.id==='help')name='help';
   if(el.tagName==='SUMMARY')name='chevron';
   if(el.matches('.tag[data-status]'))name=el.dataset.status==='Ideia'?'circle':'check';
