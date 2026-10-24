@@ -80,3 +80,9 @@ nav{border-radius:20px 20px 0 0}nav a{color:var(--muted)}nav a[aria-current=page
 /* Reduce only the language switch height by 30% (62px to 43.4px). */
 .language-switch{padding-top:2.7px;padding-bottom:2.7px}
 .language-switch button{height:36px;min-height:36px;padding-top:0;padding-bottom:0}
+
+/* Shared 24-unit, 1.7px rounded icon vocabulary for all actions. */
+.ui-icon{display:inline-block;flex-shrink:0;width:20px;height:20px;vertical-align:middle;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.tag .ui-icon{width:14px;height:14px;margin-right:4px}.tag[data-status]{display:inline-flex;align-items:center;gap:3px}
+summary{list-style:none}summary::-webkit-details-marker{display:none}summary>.ui-icon{margin-right:8px}details[open]>summary>.ui-icon{transform:rotate(180deg)}
+.check button{flex-shrink:0;min-width:48px}.modal-header button .ui-icon{width:22px;height:22px}
