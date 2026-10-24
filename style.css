@@ -35,3 +35,22 @@ button:not(.primary):not(.quiet):not([aria-pressed=true]),.button:not(.primary),
 [data-theme=sun] .language-switch{background:#FFFFFF;border:2px solid #000000;box-shadow:none}
 [data-theme=sun] .language-switch button[aria-pressed=false]{color:#000000}
 [data-theme=sun] .language-switch button[aria-pressed=true]{background:#000000;color:#FFFFFF;border-color:#000000;box-shadow:none}
+
+/* Brand-colored active language and compact icon-only Sun action. */
+.language-switch{background:var(--surface);border-color:var(--line)}
+.language-switch button[aria-pressed=true],[data-theme=dark] .language-switch button[aria-pressed=true]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+[data-theme=dark] .language-switch{background:var(--surface)}
+.appearance-fab{width:56px;min-width:56px;max-width:56px;height:56px;padding:0;gap:0;border-radius:50%}
+.appearance-fab .sr-only{font-size:0}.appearance-fab[aria-pressed=true] span::before{content:none}
+/* A single contained scroll region, with fixed form title and actions. */
+body.editor-open{position:fixed;width:100%;overflow:hidden;overscroll-behavior:none}
+body.editor-open>nav,body.editor-open>.appearance-fab{visibility:hidden}
+#modal{position:fixed;inset:auto;top:calc(var(--editor-top,0px) + 12px);left:50%;transform:translateX(-50%);margin:0;width:min(456px,calc(100% - 24px));max-height:calc(var(--editor-height,100dvh) - 24px);padding:0;overflow:hidden}
+#modal[open]{display:flex;flex-direction:column}
+#editor{display:flex;flex-direction:column;min-height:0;max-height:calc(var(--editor-height,100dvh) - 26px);width:100%;margin:0}
+.modal-header{padding:16px 18px;border-bottom:1px solid var(--line);flex-shrink:0;flex-wrap:nowrap;background:var(--surface)}
+.modal-header h2{margin:0;font-size:21px}.modal-header button{flex-shrink:0;width:48px;padding:0}
+.modal-content{padding:4px 18px 18px;min-height:0;overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;scroll-padding:16px;overflow-wrap:anywhere}
+.modal-content input,.modal-content select,.modal-content textarea{scroll-margin:16px}
+.modal-footer{padding:12px 18px calc(12px + env(safe-area-inset-bottom));margin:0;border-top:1px solid var(--line);background:var(--surface);flex-shrink:0}
+.modal-footer button{flex:1}.modal-footer button[hidden]{display:none}

@@ -41,3 +41,7 @@ Cores semânticas em style.css; foco visível e erros associados por aria-descri
 ## Contornos de referência
 
 Cartões, destaque inicial, diálogos, avisos e seletor de idiomas compartilham moldura fina com raio de 24 px. Botões internos mantêm raio de 10 px e destaque de ação. Navegação recebe o mesmo contorno arredondado no topo. Modo Sol preserva bordas de 2 px.
+
+## Formulários móveis
+
+Editor em janela com título e ações fixos e um único contêiner interno rolável. Fundo bloqueado enquanto aberto, restaurando a posição no fechamento. Altura e posição acompanham VisualViewport, inclusive em redimensionamento pelo teclado. Testar teclado e barras do navegador em iOS/Android físicos continua recomendado. Idioma ativo usa as cores semânticas verdes; botão Sol circular de 56 px, apenas ícone visual, com nome acessível preservado.
