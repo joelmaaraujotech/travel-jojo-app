@@ -54,3 +54,8 @@ body.editor-open>nav,body.editor-open>.appearance-fab{visibility:hidden}
 .modal-content input,.modal-content select,.modal-content textarea{scroll-margin:16px}
 .modal-footer{padding:12px 18px calc(12px + env(safe-area-inset-bottom));margin:0;border-top:1px solid var(--line);background:var(--surface);flex-shrink:0}
 .modal-footer button{flex:1}.modal-footer button[hidden]{display:none}
+
+/* Icon-only navigation: consistent rounded linework and accessible touch targets. */
+nav a{display:flex;align-items:center;justify-content:center;min-height:56px;padding:12px 3px}
+nav a svg{display:block;width:28px;height:28px;flex-shrink:0}
+nav a[aria-current=page]{color:var(--accent)}
