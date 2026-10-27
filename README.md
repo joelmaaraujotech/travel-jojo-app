@@ -63,3 +63,11 @@ Validação em Chromium móvel: destino futuro no Hoje, formulário mínimo, cor
 ## Correção de campos no iOS
 
 Controles date/datetime-local/time recebem min-inline-size:0, largura limitada ao contêiner e appearance:none, neutralizando o dimensionamento intrínseco do Safari. Inputs e selects de uma linha usam 48 px; textarea mantém área maior. Contêiner de rolagem preservado, com min-width:0 e overflow horizontal bloqueado. Verificados no Chromium largura/altura dos campos, preenchimento de datas, registro de gasto e rolagem em viewport reduzido, PT/NL em 320/393/430 px. Safari/iPhone físico não disponível para validação nesta sessão.
+
+## Atividades e programação do dia
+
+A coleção plans agora representa atividades completas, mantendo os registros legados (text/date/done) sem perda ou mudança do esquema de backup version 3. activities.js contém cadastro, agenda e detalhes. Campos: nome e data obrigatórios, tipo, destino opcional, início/término opcionais, local, endereço, reserva e observações. Sem limite de três itens; não registra despesas automaticamente.
+
+Home inclui programação por data, filtro de destino, horários ordenados e grupo sem horário. Roteiro abre as atividades vinculadas e oferece seletor de datas com atividades. Destino é sugerido pela data ao cadastrar e pode ser alterado. Atividade fora do período do destino pede confirmação; fim antes do início gera erro; sobreposição de horários pede confirmação. Cada atividade permite ver, editar, concluir/reabrir e excluir com Desfazer. Salvar atividade/Cancelar permanecem só texto. Horários lado a lado, empilhados em larguras até 360px. CSS existente de contenção dos campos Safari preservado.
+
+Testes de navegador: preservação de plano legado, inferência de destino, datas/horários, conflito aceitar/cancelar, cinco atividades na mesma data, reserva/detalhes, concluir, excluir/desfazer, acesso por destino/datas, holandês, reload offline e ausência de overflow em 320/390/430px. Teste em iPhone físico continua pendente.
