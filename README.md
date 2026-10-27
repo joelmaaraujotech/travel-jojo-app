@@ -79,3 +79,13 @@ Home reúne Dia / Viagem sem atalhos internos para dinheiro ou frases. Viagem re
 Dia: destino e período, consulta de data com anterior/próximo e volta para hoje, programação cronológica de atividades e deslocamentos cadastrados. Antes da primeira data, abre no primeiro destino com indicação Planejamento. Deslocamentos usam somente departure informado (sem estimativas). Itens sem horário ficam separados; concluídos recolhidos. Cartão de atividade abre detalhes; única ação rápida é Concluir. Editar, reabrir e excluir estão nos detalhes. Paleta, tipografia, molduras, seletor de idioma e modo Sol preservados.
 
 Testes: primeiro destino e data futura, Home sem atalhos cruzados, Dia/Viagem, atividade/detalhes/edição/concluir/reabrir, deslocamento ordenado, navegação de datas, holandês, compatibilidade #roteiro, reabertura offline e larguras 320/390/430 px. Dados existentes preservados.
+
+## Cinco semanas e consulta unificada por país
+
+Card inicial preto usa Cinco semanas / Vijf weken e Adicionar atividade do dia; card Vamos montar sua viagem continua com Adicionar destino. Cabeçalho atualizado para 5 semanas nos dois idiomas.
+
+Atividades têm país obrigatório independente de destino opcional, permitindo planejar antes de cadastrar cidades. Data sugere um destino compatível com o país; formulário restringe vínculos a cidades do mesmo país. Alterar país atualiza as opções sem perder outros campos. Botão Salvar no roteiro permanece só texto.
+
+Agenda oferece país, uma data/todas as datas e destino. Ao selecionar país, abre todas as datas agrupadas; escolher uma data combina os filtros. Mostra destinos do país e deslocamentos cadastrados na mesma consulta. País deriva do destino vinculado ou do campo da atividade; planos legados podem usar o país único das estadias daquela data, sem adivinhar em casos ambíguos. Vínculo posterior não duplica registros.
+
+Testado: cinco semanas, retirada da ação duplicada no card, atividade sem destino, vínculo posterior, países isolados, agrupamento por data, país+data, holandês, reload offline e larguras de celular 320/390/430px.
