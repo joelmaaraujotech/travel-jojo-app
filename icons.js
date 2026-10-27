@@ -11,6 +11,7 @@ const UI_ICON_PATHS={
 function uiIcon(name){return `<svg class="ui-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${UI_ICON_PATHS[name]||UI_ICON_PATHS.circle}</svg>`}
 function decorateIcons(root=document){
  root.querySelectorAll('button:not([data-language]):not(#appearance-fab),a.button,summary,.tag[data-status]').forEach(el=>{
+  if(el.closest('.modal-footer')){el.querySelectorAll('.ui-icon').forEach(icon=>icon.remove());return}
   if(el.querySelector('.ui-icon'))return;
   const action=el.dataset.action;
   let name=({lodging:'pin',transport:'map',reservation:'download',notes:'edit',convert:'exchange',expense:'plus',plan:'plus',address:'pin','remove-plan':'close','delete-stop':'trash','delete-expense':'trash',offline:'download',export:'download',import:'upload',speak:'sound','show-phrase':'expand',settings:'settings',rate:'exchange'})[action];
