@@ -71,3 +71,11 @@ A coleção plans agora representa atividades completas, mantendo os registros l
 Home inclui programação por data, filtro de destino, horários ordenados e grupo sem horário. Roteiro abre as atividades vinculadas e oferece seletor de datas com atividades. Destino é sugerido pela data ao cadastrar e pode ser alterado. Atividade fora do período do destino pede confirmação; fim antes do início gera erro; sobreposição de horários pede confirmação. Cada atividade permite ver, editar, concluir/reabrir e excluir com Desfazer. Salvar atividade/Cancelar permanecem só texto. Horários lado a lado, empilhados em larguras até 360px. CSS existente de contenção dos campos Safari preservado.
 
 Testes de navegador: preservação de plano legado, inferência de destino, datas/horários, conflito aceitar/cancelar, cinco atividades na mesma data, reserva/detalhes, concluir, excluir/desfazer, acesso por destino/datas, holandês, reload offline e ausência de overflow em 320/390/430px. Teste em iPhone físico continua pendente.
+
+## Home como agenda exclusiva da viagem
+
+Home reúne Dia / Viagem sem atalhos internos para dinheiro ou frases. Viagem reutiliza a gestão de destinos, hospedagens e transporte; antigo #roteiro redireciona para Home em Viagem. Navegação inferior conserva o estilo e passa a quatro acessos: Hoje, Gastos, Frases e Mais. Não há segunda tela duplicada de roteiro.
+
+Dia: destino e período, consulta de data com anterior/próximo e volta para hoje, programação cronológica de atividades e deslocamentos cadastrados. Antes da primeira data, abre no primeiro destino com indicação Planejamento. Deslocamentos usam somente departure informado (sem estimativas). Itens sem horário ficam separados; concluídos recolhidos. Cartão de atividade abre detalhes; única ação rápida é Concluir. Editar, reabrir e excluir estão nos detalhes. Paleta, tipografia, molduras, seletor de idioma e modo Sol preservados.
+
+Testes: primeiro destino e data futura, Home sem atalhos cruzados, Dia/Viagem, atividade/detalhes/edição/concluir/reabrir, deslocamento ordenado, navegação de datas, holandês, compatibilidade #roteiro, reabertura offline e larguras 320/390/430 px. Dados existentes preservados.

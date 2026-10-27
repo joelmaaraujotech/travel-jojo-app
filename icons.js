@@ -14,7 +14,7 @@ function decorateIcons(root=document){
   if(el.closest('.modal-footer')){el.querySelectorAll('.ui-icon').forEach(icon=>icon.remove());return}
   if(el.querySelector('.ui-icon'))return;
   const action=el.dataset.action;
-  let name=({'activity-add':'plus','activity-edit':'edit','activity-details':'expand','activity-toggle':'check','destination-program':'map',lodging:'pin',transport:'map',reservation:'download',notes:'edit',convert:'exchange',expense:'plus',plan:'plus',address:'pin','remove-plan':'trash','delete-stop':'trash','delete-expense':'trash',offline:'download',export:'download',import:'upload',speak:'sound','show-phrase':'expand',settings:'settings',rate:'exchange'})[action];
+  let name=({'activity-add':'plus','activity-edit-from-details':'edit','activity-delete-from-details':'trash','activity-toggle-from-details':'check','activity-edit':'edit','activity-details':'expand','activity-toggle':'check','destination-program':'map',lodging:'pin',transport:'map',reservation:'download',notes:'edit',convert:'exchange',expense:'plus',plan:'plus',address:'pin','remove-plan':'trash','delete-stop':'trash','delete-expense':'trash',offline:'download',export:'download',import:'upload',speak:'sound','show-phrase':'expand',settings:'settings',rate:'exchange'})[action];
   if(action==='stop')name=el.dataset.id?'edit':'plus';
   if(action==='activity-toggle')name=el.getAttribute('aria-pressed')==='true'?'circle':'check';
   if(action==='vote')name=el.getAttribute('aria-pressed')==='true'?'check':'circle';
