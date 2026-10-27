@@ -15,3 +15,14 @@ body.welcome-open{overflow:hidden}
 #welcome-screen #welcome-start{width:100%;min-height:56px;border:1px solid #FF6B1A;border-radius:12px;background:#FF6B1A;color:#1D1D1D;font-weight:700;font-size:17px;flex-shrink:0}
 #welcome-screen button:focus-visible{outline:3px solid #FFFEF9;outline-offset:4px}
 @media(max-height:550px){#welcome-screen .welcome-logo{width:72px;height:72px;margin-bottom:12px}#welcome-screen .welcome-brand{margin-bottom:20px}#welcome-screen h1{font-size:30px}#welcome-screen .welcome-layout{padding-top:12px;padding-bottom:16px}}
+
+/* Arched doorway / pyramid reference, with stacked typographic branding. */
+#welcome-screen .welcome-layout{justify-content:flex-start}
+#welcome-screen .welcome-brand{margin-top:24px;margin-bottom:0}
+#welcome-screen h1{display:flex;flex-direction:column;align-items:center;gap:2px;text-shadow:0 2px 12px #000;margin:0 0 8px}
+#welcome-screen h1 span{font-size:27px;font-weight:600;line-height:1.1;letter-spacing:-.5px;color:#FFFEF9}
+#welcome-screen h1 strong{font-size:48px;font-weight:700;line-height:1.05;letter-spacing:-1.5px;color:#FF6B1A}
+#welcome-screen #welcome-subtitle{font-size:11px;letter-spacing:2px;text-transform:uppercase}
+#welcome-screen .welcome-shade{background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,0) 35%,rgba(0,0,0,0) 65%,rgba(0,0,0,.8))}
+#welcome-screen #welcome-start{margin-top:auto}
+@media(max-height:550px){#welcome-screen .welcome-brand{margin-top:12px}#welcome-screen h1 span{font-size:22px}#welcome-screen h1 strong{font-size:36px}#welcome-screen #welcome-subtitle{font-size:10px}}
