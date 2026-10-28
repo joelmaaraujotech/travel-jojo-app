@@ -141,3 +141,11 @@ nav a .nav-label{font-size:11px;line-height:1.3}
 :root[data-theme=sun] main .card,:root[data-theme=sun] main .hero{border:2px solid #000}
 :root[data-theme=sun] .appearance-fab{border:2px solid #000;color:#000;box-shadow:none}
 @media(max-width:350px){main .card,main .hero{padding:20px}main .home-summary h2{font-size:28px}}
+
+/* Touch feedback stays unboxed; keyboard navigation retains a visible outline. */
+nav a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+nav a:active,nav a:focus:not(:focus-visible){background:transparent;box-shadow:none;outline:none}
+nav a:focus-visible{outline:3px solid var(--focus);outline-offset:-4px;border-radius:12px}
+:root[data-theme=sun] #appearance-fab,:root[data-theme=sun] #appearance-fab[aria-pressed=true]{background:#FFFFFF;color:#000000;border:2px solid #000000;box-shadow:none}
+#appearance-fab svg{fill:none;stroke:currentColor;stroke-width:1.7}
+button[data-action=speak] .ui-icon{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
