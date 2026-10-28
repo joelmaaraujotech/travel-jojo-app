@@ -149,3 +149,11 @@ nav a:focus-visible{outline:3px solid var(--focus);outline-offset:-4px;border-ra
 :root[data-theme=sun] #appearance-fab,:root[data-theme=sun] #appearance-fab[aria-pressed=true]{background:#FFFFFF;color:#000000;border:2px solid #000000;box-shadow:none}
 #appearance-fab svg{fill:none;stroke:currentColor;stroke-width:1.7}
 button[data-action=speak] .ui-icon{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* Warm sand surfaces in the standard theme; dark and Sun palettes stay independent. */
+:root:not([data-theme]),:root[data-theme=standard]{--surface:#F3E6D2;--field:#FAF0E1;--on-accent:#FFF5E6;--selected:#EBD8C0}
+:root:not([data-theme]) main .hero,:root[data-theme=standard] main .hero{background:#49382F;color:#FFF5E6}
+:root:not([data-theme]) main .hero p,:root[data-theme=standard] main .hero p{color:#EAD9C6}
+:root:not([data-theme]) main .hero .eyebrow,:root[data-theme=standard] main .hero .eyebrow{color:#F3B397}
+:root:not([data-theme]) main .hero button.primary,:root[data-theme=standard] main .hero button.primary{color:#FFF5E6}
+:root:not([data-theme]) main .hero button:not(.primary),:root[data-theme=standard] main .hero button:not(.primary){color:#FFF5E6;border-color:#D5BFA9}
