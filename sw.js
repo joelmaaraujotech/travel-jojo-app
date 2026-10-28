@@ -1,4 +1,4 @@
-const CACHE='travel-jojo-shell-v34',ASSETS=['/','/index.html','/welcome.js','/welcome.css','/welcome-landscape.webp','/logo.svg','/app.js','/activities.js','/icons.js','/theme.js','/i18n.js','/style.css','/fonts/open-sans-400.ttf','/fonts/open-sans-600.ttf','/fonts/open-sans-700.ttf','/manifest.json','/icon-192.png?v=original2','/icon-512.png?v=original2'];
+const CACHE='travel-jojo-shell-v35',ASSETS=['/','/index.html','/welcome.js','/welcome.css','/welcome-landscape.webp','/logo.svg','/app.js','/activities.js','/icons.js','/theme.js','/i18n.js','/style.css','/fonts/golos-text.ttf','/manifest.json','/icon-192.png?v=original2','/icon-512.png?v=original2'];
 async function prepare(){const cache=await caches.open(CACHE);await cache.addAll(ASSETS);return true}
 self.addEventListener('install',e=>{e.waitUntil(prepare().then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('travel-jojo-shell-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
