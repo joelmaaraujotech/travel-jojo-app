@@ -18,3 +18,6 @@ body.welcome-open{overflow:hidden}
 @media(max-height:740px){#welcome-screen .welcome-brand{margin-top:clamp(6px,calc(12px - env(safe-area-inset-top)),12px)}#welcome-screen h1 span{font-size:24px}#welcome-screen h1 strong{font-size:44px}}
 @media(max-height:640px){#welcome-screen .welcome-layout{padding-top:calc(16px + env(safe-area-inset-top))}#welcome-screen .welcome-brand{margin-top:6px}#welcome-screen h1 span{font-size:22px}#welcome-screen h1 strong{font-size:38px}#welcome-screen #welcome-subtitle{font-size:12px}}
 @media(min-aspect-ratio:3/4){#welcome-screen .welcome-landscape{object-position:50% 65%}}
+
+/* Initial focus announces the screen without highlighting an unselected language. */
+#welcome-screen #welcome-title:focus{outline:none}
