@@ -173,3 +173,12 @@ input[type=checkbox]::before{content:'';width:6px;height:11px;border:solid var(-
 input[type=checkbox]:checked{background:var(--accent);border-color:var(--accent)}
 input[type=checkbox]:checked::before{visibility:visible}
 :root[data-theme=sun] input[type=checkbox]{border-width:2px}
+
+/* Help card uses the same strokes as the Home controls. */
+#modal:has(#help-edit-insurance){border:1.5px solid var(--line)}
+#modal:has(#help-edit-insurance) .modal-header,#modal:has(#help-edit-insurance) .modal-footer{border-width:1px}
+#modal:has(#help-edit-insurance) hr{border:0;border-top:1px solid var(--line)}
+#modal:has(#help-edit-insurance) button{border-width:1.5px;border-color:var(--line)}
+#modal:has(#help-edit-insurance) .modal-header button .ui-icon{stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+#modal:has(#help-edit-insurance) .notice{border-width:1px}
+:root[data-theme=sun] #modal:has(#help-edit-insurance),:root[data-theme=sun] #modal:has(#help-edit-insurance) button{border-width:2px}
