@@ -182,3 +182,10 @@ input[type=checkbox]:checked::before{visibility:visible}
 #modal:has(#help-edit-insurance) .modal-header button .ui-icon{stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 #modal:has(#help-edit-insurance) .notice{border-width:1px}
 :root[data-theme=sun] #modal:has(#help-edit-insurance),:root[data-theme=sun] #modal:has(#help-edit-insurance) button{border-width:2px}
+
+/* Help outlines and dividers match the 1.7px rounded icon stroke. */
+#modal:has(#help-edit-insurance){border-width:1.7px}
+#modal:has(#help-edit-insurance) button,#modal:has(#help-edit-insurance) .modal-header,#modal:has(#help-edit-insurance) .modal-footer,#modal:has(#help-edit-insurance) .notice{border-width:1.7px}
+#modal:has(#help-edit-insurance) hr{border-top-width:1.7px}
+:root[data-theme=sun] #modal:has(#help-edit-insurance),:root[data-theme=sun] #modal:has(#help-edit-insurance) button,:root[data-theme=sun] #modal:has(#help-edit-insurance) .modal-header,:root[data-theme=sun] #modal:has(#help-edit-insurance) .modal-footer,:root[data-theme=sun] #modal:has(#help-edit-insurance) .notice{border-width:2px}
+:root[data-theme=sun] #modal:has(#help-edit-insurance) hr{border-top-width:2px}
