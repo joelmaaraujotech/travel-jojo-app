@@ -189,3 +189,7 @@ input[type=checkbox]:checked::before{visibility:visible}
 #modal:has(#help-edit-insurance) hr{border-top-width:1.7px}
 :root[data-theme=sun] #modal:has(#help-edit-insurance),:root[data-theme=sun] #modal:has(#help-edit-insurance) button,:root[data-theme=sun] #modal:has(#help-edit-insurance) .modal-header,:root[data-theme=sun] #modal:has(#help-edit-insurance) .modal-footer,:root[data-theme=sun] #modal:has(#help-edit-insurance) .notice{border-width:2px}
 :root[data-theme=sun] #modal:has(#help-edit-insurance) hr{border-top-width:2px}
+
+#modal:has(#help-edit-insurance) .modal-content button,#modal:has(#help-edit-insurance) .modal-content a.button{background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:600}
+#modal:has(#help-edit-insurance) h4{margin:20px 0 8px;font-size:16px}
+#modal:has(#help-edit-insurance) .actions>a:not(.button){color:var(--link);min-height:48px;display:inline-flex;align-items:center}
