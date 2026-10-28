@@ -157,3 +157,19 @@ button[data-action=speak] .ui-icon{width:24px;height:24px;fill:none;stroke:curre
 :root:not([data-theme]) main .hero .eyebrow,:root[data-theme=standard] main .hero .eyebrow{color:#F3B397}
 :root:not([data-theme]) main .hero button.primary,:root[data-theme=standard] main .hero button.primary{color:#FFF5E6}
 :root:not([data-theme]) main .hero button:not(.primary),:root[data-theme=standard] main .hero button:not(.primary){color:#FFF5E6;border-color:#D5BFA9}
+
+/* Consistent control strokes; cards remain unframed in every theme. */
+:root:not([data-theme]),:root[data-theme=standard]{--line:#8C7766}
+header .language-switch,header .language-switch button,main button,main .button,#modal button,input:not([type=checkbox]):not([type=radio]),select,textarea{border-width:1.5px}
+input[type=checkbox]{border-width:1.5px}
+main hr,main .activity-item,main .program-day,main .booking-status{border-top-width:1px}
+main .booking-status{border-bottom-width:1px}
+:root[data-theme=sun] header .language-switch,:root[data-theme=sun] header .language-switch button,:root[data-theme=sun] main button,:root[data-theme=sun] main .button,:root[data-theme=sun] #modal button,:root[data-theme=sun] input,:root[data-theme=sun] select,:root[data-theme=sun] textarea{border-width:2px}
+main .card,main .hero,:root[data-theme=sun] main .card,:root[data-theme=sun] main .hero{border:0;box-shadow:none}
+input[aria-invalid=true],select[aria-invalid=true],textarea[aria-invalid=true]{border-width:2px}
+
+input[type=checkbox]{-webkit-appearance:none;appearance:none;display:inline-grid;place-content:center;width:24px;height:24px;min-height:24px;padding:0;border:1.5px solid var(--line);border-radius:6px;background:var(--field);vertical-align:middle;cursor:pointer}
+input[type=checkbox]::before{content:'';width:6px;height:11px;border:solid var(--on-accent);border-width:0 1.7px 1.7px 0;transform:translateY(-1px) rotate(45deg);visibility:hidden}
+input[type=checkbox]:checked{background:var(--accent);border-color:var(--accent)}
+input[type=checkbox]:checked::before{visibility:visible}
+:root[data-theme=sun] input[type=checkbox]{border-width:2px}
