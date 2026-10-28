@@ -7,13 +7,13 @@ body.welcome-open{overflow:hidden}
 #welcome-screen .welcome-layout{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;height:100%;padding:calc(24px + env(safe-area-inset-top)) 24px calc(24px + env(safe-area-inset-bottom));text-align:center}
 #welcome-screen .welcome-languages{align-self:flex-end;display:flex;gap:4px;padding:3px;border:1px solid rgba(255,254,249,.55);border-radius:999px;background:rgba(0,0,0,.48);flex-shrink:0}
 #welcome-screen .welcome-languages button{font-size:13px;line-height:1.2;font-weight:600;min-width:60px;min-height:44px;height:44px;padding:8px 12px;border:0;border-radius:999px;background:transparent;color:#FFFEF9}
-#welcome-screen .welcome-languages button[aria-pressed=true]{background:#FFFEF9;color:#1D1D1D;font-weight:700}
+#welcome-screen .welcome-languages button[aria-pressed=true]{background:#A84420;color:#FFFFFF;font-weight:700}
 #welcome-screen .welcome-brand{display:flex;flex-direction:column;align-items:center;max-width:280px;width:100%;margin-top:clamp(8px,calc(28px - env(safe-area-inset-top)),28px);margin-bottom:0;flex-shrink:0}
 #welcome-screen h1{display:flex;flex-direction:column;align-items:center;gap:2px;margin:0 0 10px;line-height:1.1;text-shadow:0 2px 12px #000}
 #welcome-screen h1 span{font-size:26px;font-weight:600;line-height:1.1;letter-spacing:-.5px;color:#FFFEF9}
 #welcome-screen h1 strong{font-size:46px;font-weight:700;line-height:1.05;letter-spacing:-1.3px;color:#FF6B1A}
 #welcome-screen #welcome-subtitle{font-size:13px;line-height:1.4;font-weight:400;letter-spacing:1.2px;text-transform:uppercase;margin:0;color:#FFFEF9;text-shadow:0 2px 12px #000}
-#welcome-screen #welcome-start{align-self:center;width:80%;max-width:280px;height:52px;min-height:52px;margin-top:auto;padding:12px 20px;flex-shrink:0;border:1px solid #FF6B1A;border-radius:12px;background:#FF6B1A;color:#1D1D1D;font-size:16px;line-height:1.25;font-weight:600}
+#welcome-screen #welcome-start{align-self:center;width:80%;max-width:280px;height:52px;min-height:52px;margin-top:auto;padding:12px 20px;flex-shrink:0;border:1px solid #A84420;border-radius:12px;background:#A84420;color:#FFFFFF;font-size:16px;line-height:1.25;font-weight:600}
 #welcome-screen button:focus-visible{outline:3px solid #FFFEF9;outline-offset:4px}
 @media(max-height:740px){#welcome-screen .welcome-brand{margin-top:clamp(6px,calc(12px - env(safe-area-inset-top)),12px)}#welcome-screen h1 span{font-size:24px}#welcome-screen h1 strong{font-size:44px}}
 @media(max-height:640px){#welcome-screen .welcome-layout{padding-top:calc(16px + env(safe-area-inset-top))}#welcome-screen .welcome-languages{padding:0}#welcome-screen .welcome-brand{margin-top:6px}#welcome-screen h1 span{font-size:22px}#welcome-screen h1 strong{font-size:38px}#welcome-screen #welcome-subtitle{font-size:12px}}
