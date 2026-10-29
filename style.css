@@ -213,3 +213,11 @@ input[type=file][hidden],#import[hidden]{display:none!important}
 
 /* Keep native vertical scrolling and taps, without page pinch scaling. */
 html,body{touch-action:pan-x pan-y}
+
+/* Header uses Start's language capsule geometry, with theme-aware surfaces. */
+header .language-switch{display:flex;align-items:center;gap:0;box-sizing:border-box;width:148px;min-width:148px;max-width:148px;height:58px;padding:2.5px;border:1.5px solid var(--line);border-radius:999px;background:var(--surface);box-shadow:none;flex-shrink:0;isolation:isolate}
+header .language-switch button{-webkit-appearance:none;appearance:none;display:flex;flex:1 1 0;align-items:center;justify-content:center;box-sizing:border-box;width:0;min-width:0;max-width:none;height:50px;min-height:50px;margin:0;padding:0 8px;border:0;border-radius:999px;background:transparent;color:var(--text);-webkit-text-fill-color:currentColor;font-size:13px;line-height:1;font-weight:600;white-space:nowrap;box-shadow:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+header .language-switch button[aria-pressed=true]{background:var(--accent);color:var(--on-accent);font-weight:700}
+header .language-switch button[aria-pressed=false]{background:transparent;color:var(--text)}
+:root[data-theme=sun] header .language-switch{border-width:2px;padding:2px}
+:root[data-theme=sun] header .language-switch button{border:0}
