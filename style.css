@@ -210,9 +210,3 @@ input[type=file][hidden],#import[hidden]{display:none!important}
 :root[data-theme=sun] #appearance-fab,:root[data-theme=sun] #appearance-fab[aria-pressed=true]{background:#FFFEF9;color:#1A1A1A;border:2px solid #1A1A1A}
 :root[data-theme=sun] button:hover,:root[data-theme=sun] .button:hover{filter:none}
 
-/* Keep the layout viewport within the device width without disabling pinch enlargement. */
-html,body{width:100%;min-width:0}
-header,main,nav{max-width:min(480px,100%)}
-main>*,header>*,.modal-content>*{min-width:0}
-main img,main video,main iframe{max-width:100%}
-main .card,main .hero,.modal-content{overflow-wrap:anywhere}
