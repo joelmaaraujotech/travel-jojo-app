@@ -196,3 +196,7 @@ input[type=checkbox]:checked::before{visibility:visible}
 
 /* Hidden utility file picker must not inherit visible form-control layout. */
 input[type=file][hidden],#import[hidden]{display:none!important}
+
+/* Sun action shares the Home hero surface, with a readable cream icon. */
+:root:not([data-theme]) #appearance-fab,:root[data-theme=standard] #appearance-fab{background:#49382F;color:#FFF5E6;box-shadow:none}
+:root[data-theme=dark] #appearance-fab{background:#121212;color:#FFFEF9;box-shadow:none}
