@@ -200,3 +200,12 @@ input[type=file][hidden],#import[hidden]{display:none!important}
 /* Sun action shares the Home hero surface, with a readable cream icon. */
 :root:not([data-theme]) #appearance-fab,:root[data-theme=standard] #appearance-fab{background:#49382F;color:#FFF5E6;box-shadow:none}
 :root[data-theme=dark] #appearance-fab{background:#121212;color:#FFFEF9;box-shadow:none}
+
+/* Outdoor reading palette: stable high contrast without shadows or image filters. */
+:root[data-theme=sun]{--bg:#FFFEF9;--surface:#FFFEF9;--field:#FFFEF9;--text:#1A1A1A;--muted:#1A1A1A;--accent:#1A1A1A;--on-accent:#FFFEF9;--line:#1A1A1A;--selected:#FFFEF9;--focus:#1A1A1A;--link:#1A1A1A}
+:root[data-theme=sun] body{font-weight:600}
+:root[data-theme=sun] p,:root[data-theme=sun] li,:root[data-theme=sun] label{line-height:1.6}
+:root[data-theme=sun] body *{box-shadow:none!important;text-shadow:none!important}
+:root[data-theme=sun] main .card,:root[data-theme=sun] main .hero{border:0;background:var(--surface);color:var(--text)}
+:root[data-theme=sun] #appearance-fab,:root[data-theme=sun] #appearance-fab[aria-pressed=true]{background:#FFFEF9;color:#1A1A1A;border:2px solid #1A1A1A}
+:root[data-theme=sun] button:hover,:root[data-theme=sun] .button:hover{filter:none}
