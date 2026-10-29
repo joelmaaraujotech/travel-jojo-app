@@ -193,3 +193,6 @@ input[type=checkbox]:checked::before{visibility:visible}
 #modal:has(#help-edit-insurance) .modal-content button,#modal:has(#help-edit-insurance) .modal-content a.button{background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:600}
 #modal:has(#help-edit-insurance) h4{margin:20px 0 8px;font-size:16px}
 #modal:has(#help-edit-insurance) .actions>a:not(.button){color:var(--link);min-height:48px;display:inline-flex;align-items:center}
+
+/* Hidden utility file picker must not inherit visible form-control layout. */
+input[type=file][hidden],#import[hidden]{display:none!important}
