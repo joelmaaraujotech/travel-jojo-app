@@ -89,3 +89,12 @@ Atividades têm país obrigatório independente de destino opcional, permitindo 
 Agenda oferece país, uma data/todas as datas e destino. Ao selecionar país, abre todas as datas agrupadas; escolher uma data combina os filtros. Mostra destinos do país e deslocamentos cadastrados na mesma consulta. País deriva do destino vinculado ou do campo da atividade; planos legados podem usar o país único das estadias daquela data, sem adivinhar em casos ambíguos. Vínculo posterior não duplica registros.
 
 Testado: cinco semanas, retirada da ação duplicada no card, atividade sem destino, vínculo posterior, países isolados, agrupamento por data, país+data, holandês, reload offline e larguras de celular 320/390/430px.
+
+
+## Sincronização opcional (preparada, ainda não ativada)
+
+O motor de sincronização e a interface de contas estão em `sync-core.js` e `cloud.js`. A distribuição mantém `enabled:false` em `cloud-config.js`: os dados continuam somente no celular até o proprietário criar e configurar um projeto Supabase. Nenhuma credencial de nuvem foi adicionada.
+
+Veja [cloud/SETUP.md](cloud/SETUP.md) para SQL/RLS, entrada por código de e-mail, SMTP, migração das duas cópias, convites, pendências offline, conflitos, lixeira e cópias diárias em dias de uso. Não prometer sincronização ou backup na nuvem antes da ativação e dos testes com os dois usuários reais.
+
+Validações locais: `node tests/sync-core.test.cjs`; SQL em PostgreSQL via PGlite, incluindo RLS; navegador com configuração desativada e backend simulado. O restante deste README contém histórico de versões visuais anteriores.
