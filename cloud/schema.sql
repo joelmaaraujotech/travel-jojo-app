@@ -1,5 +1,5 @@
 -- Execute once in the SQL editor of YOUR Supabase project.
--- No service-role key belongs in the browser. Email OTP must be enabled.
+-- No service-role key belongs in the browser. Email/password login uses administrator-created, confirmed accounts.
 begin;
 create table public.jojo_trips(id uuid primary key default gen_random_uuid(), name text not null check(length(name) between 1 and 120), owner_id uuid not null references auth.users(id), created_at timestamptz not null default now());
 create table public.jojo_members(trip_id uuid not null references public.jojo_trips(id) on delete cascade, user_id uuid not null references auth.users(id), primary key(trip_id,user_id), unique(user_id));

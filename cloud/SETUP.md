@@ -2,20 +2,27 @@
 
 A versão distribuída permanece **desativada** em `cloud-config.js`. Nenhum dado sai do aparelho enquanto `enabled` for `false`. A autenticação não substitui o backup manual. O projeto Supabase ainda precisa ser criado pelo proprietário.
 
-## 1. Preparar o projeto
+## 1. Preparar o projeto e as duas contas privadas
 
-1. Crie um projeto na sua conta em https://supabase.com/dashboard. Escolha uma região próxima dos usuários. Guarde a senha do banco no seu gerenciador de senhas, nunca no chat, código ou repositório.
-2. No SQL Editor, execute `cloud/schema.sql` uma vez. Em projeto existente, revise os nomes antes de executar; a migração não deve substituir outras tabelas.
-3. Em Authentication, habilite entrada por e-mail e confirmação do endereço. Configure o template para mostrar `{{ .Token }}` (código OTP), pois o app recebe um código digitado, não um link.
-4. Para e-mails de ambos os viajantes, configure um provedor SMTP próprio. O serviço de e-mail de desenvolvimento do Supabase tem restrições de destinatários e não é apropriado para esse uso em produção. Insira os segredos apenas no painel do Supabase.
-5. Confira as URLs de produção em Authentication: `https://travel-jojo-app.vercel.app`. Ajuste limites de envio e CAPTCHA se necessário; não desative confirmação de e-mail.
-6. Em Project Settings/API, obtenha a URL pública e a **publishable key** (ou chave legada `anon`). Nunca use `service_role`, chave `sb_secret_`, senha do banco ou token administrativo no app.
+O acesso atual usa **e-mail e senha**. Não é necessário configurar SMTP para o login cotidiano, e não existe criação de conta no aplicativo.
+
+1. No projeto Supabase do proprietário, execute `cloud/schema.sql` uma única vez. Se já apareceu “Success”, não execute novamente.
+2. Em Authentication → Sign In / Providers, mantenha o provedor Email habilitado. Desative **Allow new users to sign up** (cadastros públicos) e mantenha login anônimo e provedores sociais desativados. O app não pode impor essa restrição do servidor sozinho.
+3. Em Authentication → Users → Add user → Create new user, crie manualmente uma conta para cada pessoa, com e-mail próprio e senha forte diferente. Não use Invite user, pois depende de envio de e-mail.
+4. Para essas duas contas conhecidas, marque **Auto Confirm User** (ou a opção equivalente de confirmação). A data `email_confirmed_at` deve estar preenchida: o convite da viagem verifica o e-mail confirmado. Não é necessário desligar a confirmação global.
+5. Guarde as senhas em gerenciador de senhas e compartilhe cada senha somente com seu titular, fora do repositório e deste chat. O aplicativo envia a senha ao endpoint Auth por HTTPS e não a grava no localStorage; guarda somente a sessão recebida.
+6. Em Project Settings → API Keys, obtenha a chave **publishable** pública e confira a URL do projeto. Nunca use `service_role`, `sb_secret_`, senha do banco ou token administrativo no navegador.
+7. Confira em URL Configuration a produção `https://travel-jojo-app.vercel.app`.
+
+### Senha esquecida
+
+A recuperação automática por e-mail depende de SMTP, que não foi configurado. Sem SMTP, use o gerenciamento administrativo de usuários do Supabase para redefinir uma senha sem enviar um e-mail, se essa opção estiver disponível no painel. Não exclua o usuário para recriar: isso altera o ID e pode romper o vínculo com a viagem. Se o painel só oferecer “Send password recovery”, será necessário um fluxo administrativo seguro de redefinição, executado pelo proprietário (nunca colocar a chave administrativa no app).
 
 ## 2. Configurar e validar antes de ativar
 
 Preencha `cloud-config.js` com a URL e chave **públicas**, inicialmente em uma prévia. Ative `enabled:true` somente após instalar o esquema. Atualize o cache em `sw.js` na publicação. A chave pública identifica o projeto; RLS e sessões autenticadas controlam acesso.
 
-Em Mais, aparecerá **Viagem compartilhada**. Cada pessoa entra com seu próprio e-mail/código. Nenhuma mensagem é enviada automaticamente por este assistente: os códigos são solicitados pelo usuário no app.
+Em Mais, aparecerá **Viagem compartilhada**. Cada pessoa entra com seu próprio e-mail e senha, usando uma das contas criadas pelo administrador. Nenhum e-mail de acesso é enviado.
 
 ## 3. Migrar as duas cópias sem perda
 
@@ -47,7 +54,7 @@ Os testes locais não substituem a validação com Supabase Auth, RLS e e-mail r
 
 ## Referências oficiais
 
-- https://supabase.com/docs/guides/auth/auth-email-passwordless
+- https://supabase.com/docs/guides/auth/passwords
 - https://supabase.com/docs/guides/auth/auth-smtp
 - https://supabase.com/docs/guides/database/postgres/row-level-security
 - https://supabase.com/docs/guides/getting-started/api-keys

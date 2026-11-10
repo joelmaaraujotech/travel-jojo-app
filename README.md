@@ -95,6 +95,6 @@ Testado: cinco semanas, retirada da ação duplicada no card, atividade sem dest
 
 O motor de sincronização e a interface de contas estão em `sync-core.js` e `cloud.js`. A distribuição mantém `enabled:false` em `cloud-config.js`: os dados continuam somente no celular até o proprietário criar e configurar um projeto Supabase. Nenhuma credencial de nuvem foi adicionada.
 
-Veja [cloud/SETUP.md](cloud/SETUP.md) para SQL/RLS, entrada por código de e-mail, SMTP, migração das duas cópias, convites, pendências offline, conflitos, lixeira e cópias diárias em dias de uso. Não prometer sincronização ou backup na nuvem antes da ativação e dos testes com os dois usuários reais.
+Veja [cloud/SETUP.md](cloud/SETUP.md) para SQL/RLS, entrada por e-mail e senha (contas criadas pelo administrador), SMTP, migração das duas cópias, convites, pendências offline, conflitos, lixeira e cópias diárias em dias de uso. Não prometer sincronização ou backup na nuvem antes da ativação e dos testes com os dois usuários reais.
 
 Validações locais: `node tests/sync-core.test.cjs`; SQL em PostgreSQL via PGlite, incluindo RLS; navegador com configuração desativada e backend simulado. O restante deste README contém histórico de versões visuais anteriores.
