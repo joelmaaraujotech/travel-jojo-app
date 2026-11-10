@@ -28,7 +28,7 @@ Em Mais, aparecerá **Viagem compartilhada**. Cada pessoa entra com seu próprio
 
 1. Nos dois celulares, exporte um backup JSON e guarde fora do navegador.
 2. Revise as diferenças. Escolha qual cópia será a base, incorporando manualmente informações exclusivas da outra. A primeira migração não faz mescla automática.
-3. No celular-base: entre, escolha **Compartilhar esta viagem** e confirme. Uma cópia anterior à nuvem também será exportada.
+3. No celular-base: entre, escolha **Compartilhar esta viagem** e confirme. Uma cópia anterior à nuvem também será guardada neste celular. Use Baixar cópia de segurança para exportá-la quando desejar; o compartilhamento não abre um arquivo automaticamente.
 4. Convide o e-mail exato da outra pessoa. O código expira em sete dias e aceita um único uso; gerar outro revoga o anterior. O limite é de dois membros.
 5. No segundo celular: entre com o e-mail convidado, use o código e escolha **Abrir viagem compartilhada**. Leia a confirmação de substituição e guarde o backup anterior.
 6. Teste nos dois aparelhos: destino, atividade, gasto, exclusão e lixeira, modo avião, retorno da rede e edição simultânea do mesmo item. Conflitos exigem escolha explícita entre a versão local e a da nuvem.
