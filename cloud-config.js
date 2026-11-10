@@ -1,3 +1,3 @@
-// Public connection settings only. NEVER put a secret/service_role key here.
-// Keep disabled until cloud/schema.sql is installed and two-user tests pass.
-window.JOJO_CLOUD_CONFIG=Object.freeze({enabled:false,url:'https://zlsdbevaahvcerifnktt.supabase.co',publishableKey:''});
+// Public project settings. Access to trip data still requires an authenticated member.
+// Never use a secret/service_role key in this file.
+window.JOJO_CLOUD_CONFIG=Object.freeze({enabled:true,url:'https://zlsdbevaahvcerifnktt.supabase.co',publishableKey:'sb_publishable_4qbSWHiJZB6IqBJ-kglAdQ_S_E9xSrj'});
