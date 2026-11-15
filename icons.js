@@ -11,10 +11,10 @@ const UI_ICON_PATHS={
 function uiIcon(name){return `<svg class="ui-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${UI_ICON_PATHS[name]||UI_ICON_PATHS.circle}</svg>`}
 function decorateIcons(root=document){
  root.querySelectorAll('button:not([data-language]):not(#appearance-fab),a.button,summary,.tag[data-status]').forEach(el=>{
-  if(el.closest('.modal-footer')){el.querySelectorAll('.ui-icon').forEach(icon=>icon.remove());return}
+  if(el.closest('.modal-footer')||el.matches('.activity-open,.tag')){el.querySelectorAll('.ui-icon').forEach(icon=>icon.remove());return}
   if(el.querySelector('.ui-icon'))return;
   const action=el.dataset.action;
-  let name=({'activity-add':'plus','activity-edit-from-details':'edit','activity-delete-from-details':'trash','activity-toggle-from-details':'check','activity-edit':'edit','activity-details':'expand','activity-toggle':'check','destination-program':'map',lodging:'pin',transport:'map',reservation:'download',notes:'edit',convert:'exchange',expense:'plus','edit-expense':'edit',plan:'plus',address:'pin','remove-plan':'trash','delete-stop':'trash','delete-expense':'trash',offline:'download',export:'download',import:'upload',speak:'sound','show-phrase':'expand',settings:'settings',rate:'exchange'})[action];
+  let name=({'activity-add':'plus','activity-edit-from-details':'edit','activity-delete-from-details':'trash','activity-toggle-from-details':'check','activity-edit':'edit','activity-details':'expand','activity-toggle':'check','destination-program':'map',convert:'exchange',expense:'plus','edit-expense':'edit',plan:'plus',address:'pin','remove-plan':'trash','delete-stop':'trash','delete-expense':'trash',offline:'download',export:'download',import:'upload',speak:'sound','show-phrase':'expand',settings:'settings',rate:'exchange'})[action];
   if(action==='stop')name=el.dataset.id?'edit':'plus';
   if(action==='activity-toggle')name=el.getAttribute('aria-pressed')==='true'?'circle':'check';
   if(action==='vote')name=el.getAttribute('aria-pressed')==='true'?'check':'circle';
