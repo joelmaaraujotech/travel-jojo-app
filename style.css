@@ -313,3 +313,24 @@ main .phrase-countries button{min-width:0}
 .phrase-categories button{min-width:0;white-space:normal}
 .phrase-categories button[aria-pressed=true]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
 .phrase-card .actions .primary{flex:1}
+
+/* Home: progressive destination details and a compact daily agenda. */
+.agenda-context h2{margin-bottom:4px}
+.agenda-context p{margin:0}
+.active-program-filters{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin:12px 0}
+.active-program-filters p{margin:0;overflow-wrap:anywhere}
+main summary,#modal summary{min-height:48px;padding-top:12px;padding-bottom:12px;cursor:pointer;overflow-wrap:anywhere}
+.destination-details{margin-top:12px}
+.destination-details>.actions{display:grid;grid-template-columns:minmax(0,1fr)}
+.destination-details>.actions>button{width:100%;min-width:0}
+.activity-completed-label{font-size:14px;color:var(--muted)}
+main .activity-item{padding-top:12px;padding-bottom:12px}
+main .activity-item .activity-open{color:var(--text);background:transparent;border:0;box-shadow:none}
+main .activity-item.next-activity{border-left:0;padding-left:0}
+main .next-activity>.eyebrow{color:var(--accent);font-size:14px;margin-bottom:4px}
+main .activity-open .muted{font-size:16px}
+main .agenda-calendar label{font-size:14px}
+main .agenda-date{align-items:end}
+#activity-city-hint{font-size:14px;overflow-wrap:anywhere}
+#activity-country[hidden]{display:none}
+@media(max-width:350px){main .agenda-tabs button{padding-left:8px;padding-right:8px;font-size:15px}}
