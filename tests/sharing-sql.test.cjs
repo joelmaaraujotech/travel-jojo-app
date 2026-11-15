@@ -1,0 +1,16 @@
+const {PGlite}=require(process.env.PGLITE_MODULE||'@electric-sql/pglite');
+const fs=require('node:fs'),assert=require('node:assert/strict');
+(async()=>{const db=new PGlite();await db.exec(`create role anon;create role authenticated;create schema auth;create table auth.users(id uuid primary key,email text,email_confirmed_at timestamptz);create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;grant usage on schema auth to authenticated;grant execute on function auth.uid() to authenticated;`);await db.exec(fs.readFileSync('cloud/schema.sql','utf8'));const migration=fs.readFileSync('cloud/simplify-sharing.sql','utf8');await db.exec(migration);await db.exec(migration);
+ const ids=['00000000-0000-4000-8000-000000000001','00000000-0000-4000-8000-000000000002','00000000-0000-4000-8000-000000000003','00000000-0000-4000-8000-000000000004'];
+ for(let i=0;i<ids.length;i++)await db.query('insert into auth.users values($1,$2,$3)',[ids[i],['owner','guest','stranger','unverified'][i]+'@example.com',i===3?null:new Date().toISOString()]);
+ async function as(i,role='authenticated'){await db.exec('reset role');await db.query("select set_config('request.jwt.claim.sub',$1,false)",[i===null?'':ids[i]]);await db.exec('set role '+role);}
+ const scalar=async(sql,args=[])=>Object.values((await db.query(sql,args)).rows[0])[0];
+ await as(0);const trip=await scalar("select public.jojo_create_trip('Travel JOJO')");const token=await scalar('select public.jojo_invite($1,$2)',[trip,'guest@example.com']);let s=await scalar('select public.jojo_sharing_status()');assert.equal(s.trip.is_owner,true);assert.equal(s.trip.member_count,1);
+ await as(1);s=await scalar('select public.jojo_sharing_status()');assert.equal(s.invites[0].token,token);assert.equal(s.invites[0].inviter_email,'owner@example.com');assert.equal(s.trip,null);
+ await as(2);assert.deepEqual((await scalar('select public.jojo_sharing_status()')).invites,[]);await assert.rejects(()=>scalar('select public.jojo_join($1)',[token]),/invalid_invite/);
+ await as(3);await assert.rejects(()=>scalar('select public.jojo_sharing_status()'),/verified_email_required/);
+ await as(null,'anon');await assert.rejects(()=>scalar('select public.jojo_sharing_status()'),/permission denied/);
+ await as(1);assert.equal(await scalar('select public.jojo_join($1)',[token]),trip);s=await scalar('select public.jojo_sharing_status()');assert.equal(s.trip.member_count,2);assert.equal(s.trip.is_owner,false);assert.equal(s.trip.participants.length,2);assert.deepEqual(s.invites,[]);
+ await as(0);await assert.rejects(()=>scalar('select public.jojo_invite($1,$2)',[trip,'stranger@example.com']),/trip_full/);
+ await db.exec('reset role');assert.equal(Number(await scalar('select count(*) from public.jojo_members')),2);assert.equal(Number(await scalar('select count(*) from public.jojo_records')),0);
+ console.log('PASS: PostgreSQL migration applies twice; verified recipient only sees own token; stranger and anonymous denied; unverified rejected; member identity scoped; existing join validation and two-person limit preserved; no trip data modified');await db.close();})().catch(e=>{console.error(e);process.exit(1)});

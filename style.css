@@ -299,3 +299,11 @@ main .phrase-countries button{min-width:0}
 #modal:has(#help-edit-insurance) details[data-help-country]>summary{font-size:16px;font-weight:600}
 #modal .help-phrase .arabic{margin:16px 0}
 :root[data-theme=sun] .cloud-options,:root[data-theme=sun] .form-optional{border-top-width:2px}
+
+/* Sharing: one next step; maintenance remains under the disclosure. */
+#cloud-card .cloud-main{display:grid;gap:12px}
+#cloud-card .cloud-main>p,#cloud-card .cloud-invitation>p{margin:0 0 4px}
+#cloud-card .cloud-main>button,#cloud-card .cloud-invitation>button{width:100%;min-width:0;white-space:normal}
+#cloud-card .cloud-invitation{display:grid;gap:12px;overflow-wrap:anywhere}
+#cloud-card .cloud-status{margin-bottom:16px}
+#cloud-invite-token{user-select:text;overflow-wrap:anywhere}

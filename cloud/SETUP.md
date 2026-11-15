@@ -28,7 +28,7 @@ Em Mais, aparecerá **Viagem compartilhada**. Cada pessoa entra com seu próprio
 
 1. Nos dois celulares, exporte um backup JSON e guarde fora do navegador.
 2. Revise as diferenças. Escolha qual cópia será a base, incorporando manualmente informações exclusivas da outra. A primeira migração não faz mescla automática.
-3. No celular-base: entre, escolha **Compartilhar esta viagem** e confirme. Uma cópia anterior à nuvem também será guardada neste celular. Use Baixar cópia de segurança para exportá-la quando desejar; o compartilhamento não abre um arquivo automaticamente.
+3. No celular-base: entre, escolha **Compartilhar esta viagem** e confirme. Uma cópia anterior à nuvem também será exportada.
 4. Convide o e-mail exato da outra pessoa. O código expira em sete dias e aceita um único uso; gerar outro revoga o anterior. O limite é de dois membros.
 5. No segundo celular: entre com o e-mail convidado, use o código e escolha **Abrir viagem compartilhada**. Leia a confirmação de substituição e guarde o backup anterior.
 6. Teste nos dois aparelhos: destino, atividade, gasto, exclusão e lixeira, modo avião, retorno da rede e edição simultânea do mesmo item. Conflitos exigem escolha explícita entre a versão local e a da nuvem.
@@ -58,3 +58,11 @@ Os testes locais não substituem a validação com Supabase Auth, RLS e e-mail r
 - https://supabase.com/docs/guides/auth/auth-smtp
 - https://supabase.com/docs/guides/database/postgres/row-level-security
 - https://supabase.com/docs/guides/getting-started/api-keys
+
+## Simpler invitations (existing projects)
+
+Run `cloud/simplify-sharing.sql` in the project's SQL Editor. It is safe to re-run and does not modify trips, memberships or records. It adds the authenticated `jojo_sharing_status()` RPC, allowing a verified invite recipient to see their own unexpired invitation and allowing existing members to see who shares their trip. No anonymous access or direct writes are granted; acceptance still uses the existing `jojo_join` validation and two-person limit.
+
+After the migration, open **Mais** in both phones. The owner chooses **Convidar para nossa viagem** and enters the other account's email. The recipient sees **Aceitar e abrir viagem**. Acceptance preserves a local safety copy before opening the cloud trip; cancelling does not accept. No email is sent by the application. The code remains available as an alternative and continues to work before the migration is installed.
+
+Once connected, saving and reconnecting trigger synchronization automatically; open apps also check every 15 seconds. **Sincronizar agora**, backups, conflict review and account actions remain under **Gerenciar compartilhamento**. Offline edits remain on the device until a successful connection. “Tudo salvo na nuvem” is shown only after a successful sync with no pending edits or conflicts; it does not assert that the other device has already downloaded those changes.
