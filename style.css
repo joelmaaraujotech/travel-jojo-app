@@ -334,3 +334,18 @@ main .agenda-date{align-items:end}
 #activity-city-hint{font-size:14px;overflow-wrap:anywhere}
 #activity-country[hidden]{display:none}
 @media(max-width:350px){main .agenda-tabs button{padding-left:8px;padding-right:8px;font-size:15px}}
+
+/* Brief, opaque feedback distinct from terracotta actions. */
+:root{--feedback-bg:#49382F;--feedback-text:#FFF5E6}
+:root[data-theme=dark]{--feedback-bg:#49382F;--feedback-text:#FFF5E6}
+:root[data-theme=sun]{--feedback-bg:#1A1A1A;--feedback-text:#FFFEF9}
+#toast,#modal .modal-feedback{background:var(--feedback-bg);color:var(--feedback-text);border:0;box-shadow:none;opacity:1;border-radius:12px;font-size:16px;line-height:1.45;padding:10px 12px;gap:8px;align-items:center;grid-template-columns:minmax(0,1fr) auto;width:min(420px,calc(100% - 24px));max-width:calc(100% - 24px);overflow-wrap:anywhere}
+#toast:has(.feedback-undo){grid-template-columns:minmax(0,1fr) auto auto}
+#toast button,#modal .modal-feedback button{margin:0;min-width:44px;min-height:44px;padding:8px;color:var(--feedback-text);background:transparent;border:0;font-size:16px;line-height:1.3;box-shadow:none}
+#toast .feedback-undo{text-decoration:underline;text-underline-offset:4px;font-weight:700}
+#toast .feedback-close,#modal .modal-feedback .feedback-close{width:44px;height:44px;flex-shrink:0;border-radius:8px}
+#toast button:focus-visible,#modal .modal-feedback button:focus-visible{outline:2px solid var(--feedback-text);outline-offset:-3px}
+#modal .modal-feedback{display:grid;width:100%;max-width:100%;margin:16px 0 0}
+#modal:has(#help-edit-insurance) .modal-feedback button{background:transparent;color:var(--feedback-text)}
+:root[data-theme=sun] #toast,:root[data-theme=sun] #modal .modal-feedback{border:2px solid #1A1A1A}
+@media(max-width:350px){#toast:has(.feedback-undo){grid-template-columns:minmax(0,1fr) auto}#toast .feedback-message{grid-column:1/-1}#toast .feedback-undo{justify-self:start}#toast .feedback-close{justify-self:end}}
