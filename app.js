@@ -8,7 +8,7 @@ function save(){data.updated=now();try{localStorage.setItem(KEY,JSON.stringify(d
 let undoDeletion=null;
 let toastState=null;
 function dismissToast(){clearTimeout(toast.timer);const previous=toastState;toastState=null;const box=$('#toast');box.style.display='none';box.replaceChildren();if(previous?.target!==box)previous?.target?.remove()}
-function placeToast(){const box=$('#toast');if(box.style.display==='none')return;const controls=[$('nav'),$('#appearance-fab')].filter(el=>el&&getComputedStyle(el).visibility!=='hidden');const top=Math.min(innerHeight,...controls.map(el=>el.getBoundingClientRect().top));box.style.bottom=Math.max(12,innerHeight-top+12)+'px'}
+function placeToast(){const box=$('#toast');if(box.style.display==='none')return;const controls=[$('nav'),$('#appearance-fab')].filter(el=>el&&el.getBoundingClientRect().height>0);const top=Math.min(innerHeight,...controls.map(el=>el.getBoundingClientRect().top));box.style.bottom=Math.max(12,innerHeight-top+12)+'px'}
 function runToastTimer(){const state=toastState;clearTimeout(toast.timer);if(!state||state.persistent||state.paused.size)return;state.started=Date.now();toast.timer=setTimeout(()=>{if(toastState===state)dismissToast()},state.remaining)}
 function pauseToast(reason){const state=toastState;if(!state||state.paused.has(reason))return;if(!state.paused.size)state.remaining=Math.max(0,state.remaining-(Date.now()-state.started));state.paused.add(reason);clearTimeout(toast.timer)}
 function resumeToast(reason){if(!toastState||!toastState.paused.delete(reason))return;runToastTimer()}
